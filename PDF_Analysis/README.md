@@ -153,7 +153,7 @@ In addition to embedding URLs inside of PDFs, an attacker might also attempt to 
 
 Along with `pdf-parser.py`, the [Didier Stevens](https://github.com/DidierStevens/DidierStevensSuite/tree/master) suite of tools includes `pdfid.py`. This tool is not a PDF parser on its own, but it will scan a file to look for certain PDF keywords, allowing you to identify PDF documents that contain (for example) JavaScript or execute an action when opened. PDFiD will also handle name obfuscation.
 
-Although we did so in reverse-order, a good methodology to use something like `pdfid.py` first to triage PDF documents, and then analyze suspicious ones with pdf-parser.
+Although we did so in reverse-order, a good methodology is to use something like `pdfid.py` first to triage PDF documents, and then analyze suspicious ones with pdf-parser.
 
 As an example, let's run `pdfid.py` against the `Dropper.pdf` file:
 
