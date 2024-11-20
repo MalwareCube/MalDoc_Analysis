@@ -39,6 +39,12 @@ This leads us into tools like `eioc.py`, which is a [Python script](https://gith
 
 If we run `eioc.py` against an email, it will provide us with several pieces of parsed and extracted indicators like IP addresses and important email headers, including the filenames and cryptographic hash values of any attachments.
 
+**First, make sure you're in the correct MalDoc Analysis directory:**
+
+```
+cd ~/Desktop/BSides_Ottawa_2024/MalDoc_Analysis
+```
+
 To perform this, we can simply use Python to call the `eioc.py` script, which is located in the `Tools` directory, and provide it the `Invoice.eml` file:
 
 ```
