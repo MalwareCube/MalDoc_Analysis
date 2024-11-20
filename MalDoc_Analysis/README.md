@@ -232,4 +232,4 @@ It's always a good idea to document the malicious artifacts we gathered during o
 
 If you enjoyed this scenario and lesson, be sure to check out TCM Security's [Security Operations (SOC) 101](https://academy.tcm-sec.com/p/security-operations-soc-101), a 30+ hour training course that dives deep into Phishing Analysis, Network Traffic Analysis, Endpoint Detection and Response, Log Analysis and Management, Security Information and Event Management (SIEM), Threat Intelligence, and DFIR operations. 😎🛡️
 
-Use the limited time promo code `BSIDESOTTAWA` to save 50% off the TCM Academy! :) 
+🚨 Use the limited time promo code `BSIDESOTTAWA` to save 50% off the TCM Academy! :)
