@@ -266,7 +266,9 @@ It's always a good idea to document the malicious artifacts we gathered during o
 - `hxxps[://]ecy[.]wcs520[.]com/wp-content/themes/evita/red[.]php`
 - `hxxps[://]script[.]google[.]com/macros/s/AKfycbwABk1V3TSZ7dwG4lOsmbewJuEt2TExXS8cSaYuhcQwcxoffsDSJS8VLFR4h0pkJFwkUQ/exec`
 
-## TCM Security
+## TCM Security - Promo Code
 ![TCM Security logo](https://github.com/user-attachments/assets/90283a54-d164-4990-a09b-4edb84ac661e)
 
 If you enjoyed this scenario and lesson, be sure to check out TCM Security's [Security Operations (SOC) 101](https://academy.tcm-sec.com/p/security-operations-soc-101), a 30+ hour training course that dives deep into Phishing Analysis, Network Traffic Analysis, Endpoint Detection and Response, Log Analysis and Management, Security Information and Event Management (SIEM), Threat Intelligence, and DFIR operations. 😎🛡️
+
+🚨 Use the limited time promo code BSIDESOTTAWA to save 50% off the TCM Academy! :)
