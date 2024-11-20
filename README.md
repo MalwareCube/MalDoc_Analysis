@@ -19,4 +19,4 @@ git clone https://github.com/MalwareCube/BSides_Ottawa_2024.git
 cd BSides_Ottawa_2024
 ```
 
-Note: If you're running this locally, make sure you have `python3` installed.
+Note: If you're following along on your own VM, make sure you have `python3` installed.
