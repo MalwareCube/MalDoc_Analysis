@@ -1,0 +1,566 @@
+<html><head><style>/*
+Copyright (c) 2017 Chris Patuzzo
+https://twitter.com/chrispatuzzo
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: white;
+  padding: 10px;
+  color: #333;
+}
+
+body > *:first-child {
+  margin-top: 0 !important;
+}
+
+body > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a.absent {
+  color: #cc0000;
+}
+
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative;
+}
+
+h2:first-child, h1:first-child, h1:first-child + h2, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  text-decoration: none;
+}
+
+h1 tt, h1 code {
+  font-size: inherit;
+}
+
+h2 tt, h2 code {
+  font-size: inherit;
+}
+
+h3 tt, h3 code {
+  font-size: inherit;
+}
+
+h4 tt, h4 code {
+  font-size: inherit;
+}
+
+h5 tt, h5 code {
+  font-size: inherit;
+}
+
+h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: black;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777777;
+  font-size: 14px;
+}
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0;
+}
+
+hr {
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+body > h1:first-child + h2 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0;
+}
+
+li p.first {
+  display: inline-block;
+}
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul :first-child, ol :first-child {
+  margin-top: 0;
+}
+
+ul :last-child, ol :last-child {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt > :first-child {
+  margin-top: 0;
+}
+
+dl dt > :last-child {
+  margin-bottom: 0;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd > :first-child {
+  margin-top: 0;
+}
+
+dl dd > :last-child {
+  margin-bottom: 0;
+}
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777;
+}
+
+blockquote > :first-child {
+  margin-top: 0;
+}
+
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+table {
+  padding: 0;
+}
+table tr {
+  border-top: 1px solid #cccccc;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+table tr th {
+  font-weight: bold;
+  border: 1px solid #cccccc;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+table tr td {
+  border: 1px solid #cccccc;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+table tr th :first-child, table tr td :first-child {
+  margin-top: 0;
+}
+
+table tr th :last-child, table tr td :last-child {
+  margin-bottom: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+span.frame {
+  display: block;
+  overflow: hidden;
+}
+
+span.frame > span {
+  border: 1px solid #dddddd;
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 13px 0 0;
+  padding: 7px;
+  width: auto;
+}
+
+span.frame span img {
+  display: block;
+  float: left;
+}
+
+span.frame span span {
+  clear: both;
+  color: #333333;
+  display: block;
+  padding: 5px 0 0;
+}
+
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+span.align-center > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: center;
+}
+
+span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+span.align-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px 0 0;
+  text-align: right;
+}
+
+span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left;
+}
+
+span.float-left span {
+  margin: 13px 0 0;
+}
+
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right;
+}
+
+span.float-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: right;
+}
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}</style></head><body><h1 id="performing-static-pdf-analysis">Performing Static PDF Analysis</h1>
+<h2 id="scenario">Scenario</h2>
+<p>Your SOC team received a ticket for a suspicious email reported by an employee. The email contains an attachment—a PDF document—that appears to be part of a phishing attempt. Your goal is to analyze the email to determine if the attached PDF is malicious and to identify any Indicators of Compromise (IoCs). </p>
+<p>In this scenario, you will explore analysis techniques for safely identifying and analyzing malicious PDFs. You&#39;ll learn the composition and structure of PDFs, along with some simple tools that can be used to perform static analysis to detect malware artifacts and uncover embedded payloads or scripts.</p>
+<p>The email can be found in this directory, named <code>Tax_Report.eml</code>. A preview of the email in the Mozilla Thunderbird email client can be seen here:</p>
+<p><img src="https://github.com/user-attachments/assets/df10d0c1-67ae-443b-8d05-2d1bde7fc048" alt="Email excerpt"></p>
+<p>As we can see above, the email references a PDF for review which has been attached to the email as <code>Tax_Report.pdf</code>.</p>
+<h2 id="portable-document-format-pdf-">Portable Document Format (PDF)</h2>
+<p><img src="https://github.com/user-attachments/assets/393a0a25-e9f1-4e72-bc83-89302a947dc1" alt="PDF Icon"></p>
+<p>A PDF, or Portable Document Format, is a file format created by Adobe in the early 1990s to present documents consistently across different devices and operating systems. Because of this consistency, PDFs are commonly used for sharing documents that need to retain their formatting.</p>
+<p>However, its ubiquity in the workplace means that, along with malicious Office documents (MalDocs), malicious PDFs are among the most prevalent attachment-based threats organizations encounter. Organizations and individuals often trust PDFs because they are a standard format for invoices, contracts, reports, and other official documents. This trust, along with the widespread use of PDF readers and their compatibility across devices, makes them a natural choice for attackers looking to bypass security measures and evade basic email attachment filters.</p>
+<p>In most cases, attackers don&#39;t even go as far as to embed malicious content inside of PDF files themselves. Arguably, the most common technique involves simply containing a clickable URL or link within a PDF that then leads to a malicious webpage or drive-by download.</p>
+<h2 id="email-attachments">Email Attachments</h2>
+<p>Email attachments are files sent alongside the email, which can range from documents (Office documents, PDFs, etc.) to images (JPGs, PNGs, etc.) or compressed archives (<code>.zip</code> files, etc.). These files are typically encoded within the email as a <strong>base64</strong> encoded string, depending on the encoding method used, to ensure safe transport across different email clients and systems.</p>
+<p>If we were to open up the <code>Tax_Report.eml</code> file in a text editor, we&#39;ll find that the attachment has been embedded at the bottom of the email file. </p>
+<p>In this lab, we&#39;ll learn how to extract and analyze these attachments to assess them for potential malware. Through various email headers, such as the <code>Content-Type</code>, the <code>Content-Transfer-Encoding</code>, and the <code>Content-Disposition</code>, we can infer that the email attachment is titled <code>Tax_Report.pdf</code> and has been encoded using <code>base64</code>. </p>
+<p>These are the same headers that an email client would check in order to display a preview of the file in the client or browser.</p>
+<p><img src="https://github.com/user-attachments/assets/bde6ef8f-f46f-4968-807a-765b496acbca" alt="The attachment section of an EML file"></p>
+<p>There are several ways to extract attachments from an email for analysis, such as saving it locally from an email client, downloading it from a ticketing system in the case of a phishing investigation, or using scripts to directly dump the attachment. Each approach has its pros and cons.</p>
+<p>In some cases, it&#39;s best—or not even necessary—to write the attachment to disk to perform a basic reputation analysis.</p>
+<h3 id="eioc-py">eioc.py</h3>
+<p>This leads us into tools like <code>eioc.py</code>, which is a <a href="https://github.com/MalwareCube/Email-IOC-Extractor">Python script</a> designed to aid in email forensic analysis by extracting various components from email files such as IP addresses, URLs, headers, and attachment metadata.</p>
+<p>If we run <code>eioc.py</code> against an email, it will provide us with several pieces of parsed and extracted indicators like IP addresses and important email headers, including the filenames and cryptographic hash values of any attachments.</p>
+<p><strong>First, make sure you&#39;re in the correct PDF Analysis directory:</strong></p>
+<pre><code>cd ~/Desktop/BSides_Ottaw<span class="hljs-built_in">a_2024</span>/PDF_Analysis
+</code></pre><p>To perform this, we can simply use Python to call the <code>eioc.py</code> script, which is located in the <code>Tools</code> directory, and provide it the <code>Tax_Report.eml</code> file:</p>
+<pre><code>python3 Tools/eioc<span class="hljs-selector-class">.py</span> Tax_Report.eml
+</code></pre><p><img src="https://github.com/user-attachments/assets/b9b06d2d-f625-4578-a23e-bb753a48e58a" alt="The output of eioc.py"></p>
+<p>And with a single command, we&#39;ve extracted the MD5, SHA1, and SHA256 hash values of the PDF without even writing it to disk, minimizing the risk of accidental clicks or execution.</p>
+<p>We can now take any of these hash values and perform a reputation lookup by checking its hash against threat intelligence databases to determine if the file is known to be malicious.</p>
+<p>For example, if we head over to <a href="https://virustotal.com">VirusTotal</a>, we can search for the file&#39;s MD5 hash <code>9080bf37c122cdd9d4eb9e87e95ba614</code>: </p>
+<p><img src="https://github.com/user-attachments/assets/abb3a5cd-d729-4905-ab30-0f1e7b821a92" alt="Virustotal submission page"></p>
+<p>Upon doing so, we will quickly discover that this file was flagged as malicious by almost 30 security vendors, all claiming that the file is some kind of <strong>trojan</strong> used in phishing attacks.</p>
+<p><img src="https://github.com/user-attachments/assets/15a22c7a-42d6-4ae4-9ed9-3339dc2f9a58" alt="Virustotal results page"></p>
+<h2 id="extracting-email-attachments">Extracting Email Attachments</h2>
+<p>In some cases, we may still need to extract the attachment from an email in order to perform static and dynamic malware analysis. With an attachment safely extracted, an analyst can perform static analysis to inspect the file&#39;s structure, metadata, and embedded objects, as well as dynamic analysis by safely executing the file in a controlled environment to observe its behavior.</p>
+<h3 id="emldump-py">emldump.py</h3>
+<p>One useful tool for extracting email attachments is <code>emldump.py</code>, developed by <a href="https://github.com/DidierStevens/DidierStevensSuite/tree/master">Didier Stevens</a>. This script is designed to parse email files and extract the attachments without having to open them in an email client. It also can allow us to automate the process of attachment extraction, making it easier to handle larger volumes of suspicious emails at once.</p>
+<p>To safely extract the PDF from the email, we can simply run <code>emldump.py</code> and point it to the email in question:</p>
+<pre><code>python3 Tools/emldump<span class="hljs-selector-class">.py</span> Tax_Report.eml
+</code></pre><p>This command extracts the content of the <code>.eml</code> file and displays its multipart structure in the form of various streams or indexes. Interestingly, the fourth stream (<code>4:</code>) is labeled <code>Tax_Report.pdf</code>. The <code>application/pdf</code> MIME type indicates a PDF file, and its size is 49,272 bytes.</p>
+<p><img src="https://github.com/user-attachments/assets/76a9b307-2e70-4846-be09-337a15988875" alt="emldump.py output"></p>
+<p>Now that we know the correct stream we want to extract, we can run the command again to select it using the <code>-s 4</code> argument (to indicate the fourth stream), along with <code>-d</code> to dump the file to disk. If we run this as is, the contents of the file will be dumped to the terminal. Instead, we want to direct the output to its own file using the <code>&gt;</code> operator:</p>
+<pre><code>python3 Tools/emldump<span class="hljs-selector-class">.py</span> Tax_Report<span class="hljs-selector-class">.eml</span> -s <span class="hljs-number">4</span> -d &gt; Tax_Report.pdf
+</code></pre><p><img src="https://github.com/user-attachments/assets/dc5f4de1-f3bf-4d76-9a43-353d4ac39e69" alt="emldump.py output"></p>
+<p>To further verify we&#39;ve extracted the correct file, we can run <code>md5sum</code> against the file and compare it to our output from <code>eioc.py</code>:</p>
+<pre><code><span class="hljs-selector-tag">md5sum</span> <span class="hljs-selector-tag">Tax_Report</span><span class="hljs-selector-class">.pdf</span>
+</code></pre><p><img src="https://github.com/user-attachments/assets/6c415030-7af2-47d5-a0f2-ef1963b3179d" alt="md5sum output"></p>
+<p>And we have a match!</p>
+<p>Now that we&#39;ve successfully extracted the suspicious attachment, let&#39;s turn to understanding the structure of PDF files and how we can analyze them for potential malware.</p>
+<h2 id="pdf-parser">PDF-Parser</h2>
+<p>As mentioned previously, embedding malicious URLs or links inside PDFs is one of the most common forms of PDF weaponization. While it is possible to open the PDF in a viewer or preview mode and hover over links or buttons to identify URLs, this approach is neither the most efficient nor the safest. It relies on manual inspection, which can be time-consuming for larger PDFs. Additionally, links may be hidden or obfuscated, and there is always the risk of accidentally clicking on them. </p>
+<p>For example, when opening the extracted <code>Tax_Report.pdf</code> file in a PDF viewer, we&#39;ll see a common form of PDF phishing, combining impersonation with a call-to-action URL. When hovering over the download button, we can identify the URL the attacker is attempting to get us to click:</p>
+<p><img src="https://github.com/user-attachments/assets/b018cd55-95ef-4a59-ad41-36c648661350" alt="PDF Rendering"></p>
+<p>Fortunately, there are several tools out there that can assist us in safely extracting these URLs or indicators. Another useful Python-based tool developed by <a href="https://github.com/DidierStevens/DidierStevensSuite/tree/master">Didier Stevens</a> is <code>pdf-parser.py</code>. PDF-Parser will parse a PDF document to identify the fundamental elements used in the analyzed file. It&#39;s widely used in malware analysis and digital forensics to inspect PDF documents for suspicious content, such as URLs, embedded JavaScript, obfuscated code, or hidden objects that might execute harmful actions when opened.</p>
+<p>To begin, call the <code>pdf-parser.py</code> script from the <code>Tools/</code> directory, and point it to the <code>Tax_Report.pdf</code> file:</p>
+<pre><code>python3 Tools/pdf-parser<span class="hljs-selector-class">.py</span> Tax_Report.pdf
+</code></pre><p><img src="https://github.com/user-attachments/assets/0e752930-a225-4aed-9ae2-05858fc36330" alt="pdf-parser.py output"></p>
+<p>As we run the command, we&#39;ll receive the entire parsed structure of the PDF file, broken into objects with metadata, links, resources, and document organization. Each structure is broken down into individual object (<code>obj</code>) streams, each containing a <code>Type</code>, such as <code>/Catalog</code> (which represents the root object of the PDF), <code>/Pages</code> (which organizes the document&#39;s pages), <code>/URI</code> (which points to an embedded URL), and many more.</p>
+<p>Obviously, this is a lot of output to manually parse through. Fortunately, we can refine our search through this output using the <code>-s</code> argument. Since our focus is on enumerating and extracting URLs, we can use the <code>&quot;/URI&quot;</code> search operator to specifically retrieve URL-related structures.</p>
+<pre><code>python3 Tools/pdf-parser<span class="hljs-selector-class">.py</span> Tax_Report<span class="hljs-selector-class">.pdf</span> -s <span class="hljs-string">"/URI"</span>
+</code></pre><p><img src="https://github.com/user-attachments/assets/e5fa9f5a-41ac-49d2-b9f1-6a53b5da5848" alt="pdf-parser.py output"></p>
+<p>And just like that, we&#39;ve managed to extract the URL from the PDF!</p>
+<pre><code>http<span class="hljs-variable">s:</span>//monitor.clickcease.<span class="hljs-keyword">com</span>//tracker/tracker?id=te2024nKEUFIqUrNt12&amp;adpos=&amp;nw=<span class="hljs-keyword">a</span>&amp;url=http<span class="hljs-variable">s:</span>//ecy.wcs520.<span class="hljs-keyword">com</span>/<span class="hljs-keyword">wp</span>-content/themes/evita/<span class="hljs-keyword">red</span>.php?utm_content=VnsDcPoijH&amp;session_id=kXwPx3abVGJRsx2KDH8f&amp;id=YKasm&amp;<span class="hljs-built_in">filter</span>=RwauvDwqWe-HLWCJ&amp;lang=de&amp;locale=FR
+</code></pre><p>As a logical next step in our investigation, we could now perform URL and domain reputation checks along with further analysis on the URL we&#39;ve identified.</p>
+<h3 id="example-2">Example 2</h3>
+<p>To demonstrate how quick this process can be, let&#39;s run the same command once more. This time, point to the <code>Statement.pdf</code> file located in the same directory:</p>
+<pre><code>python3 Tools/pdf-parser<span class="hljs-selector-class">.py</span> Statement<span class="hljs-selector-class">.pdf</span> -s <span class="hljs-string">"/URI"</span>
+</code></pre><p><img src="https://github.com/user-attachments/assets/d47249f4-0375-4967-9084-c340765c91a9" alt="pdf-parser.py output"></p>
+<p>And with that, we&#39;ve quickly identified the URL embedded in this PDF.</p>
+<pre><code>https:<span class="hljs-regexp">//</span>script.google.com<span class="hljs-regexp">/macros/</span>s<span class="hljs-regexp">/AKfycbwABk1V3TSZ7dwG4lOsmbewJuEt2TExXS8cSaYuhcQwcxoffsDSJS8VLFR4h0pkJFwkUQ/</span>exec
+</code></pre><h2 id="pdfid">PDFiD</h2>
+<p>In addition to embedding URLs inside of PDFs, an attacker might also attempt to embed malicious scripts or even entire documents for PDF viewing applications that will automatically execute when a PDF is opened.</p>
+<p>Along with <code>pdf-parser.py</code>, the <a href="https://github.com/DidierStevens/DidierStevensSuite/tree/master">Didier Stevens</a> suite of tools includes <code>pdfid.py</code>. This tool is not a PDF parser on its own, but it will scan a file to look for certain PDF keywords, allowing you to identify PDF documents that contain (for example) JavaScript or execute an action when opened. PDFiD will also handle name obfuscation.</p>
+<p>Although we did so in reverse-order, a good methodology is to use something like <code>pdfid.py</code> first to triage PDF documents, and then analyze suspicious ones with pdf-parser.</p>
+<p>As an example, let&#39;s run <code>pdfid.py</code> against the <code>Dropper.pdf</code> file:</p>
+<pre><code>python3 Tools/pdfid<span class="hljs-selector-class">.py</span> Dropper.pdf
+</code></pre><p><img src="https://github.com/user-attachments/assets/face5997-9b7c-4b86-9524-1ee2f9ee5d0e" alt="pdfid output"></p>
+<p>As suspected, the output provides an overview of the structure and various elements that make up the PDF. Commonly, we&#39;ll see structural objects or attributes like <code>xref</code>, <code>trailer</code>, and <code>startxref</code>, which are all core components used for file navigation. Additionally, we see <code>/Page</code>, which tells us how many pages are present in the document.</p>
+<p>However, there are also a few potentially suspicious elements in our output as well, such as:</p>
+<ul>
+<li><code>/JS</code> and <code>/JavaScript</code> indicate that the PDF contains embedded JavaScript, which could be used maliciously when opening a PDF in a web browser or client that executes JS.</li>
+<li><code>/OpenAction</code> indicates that the PDF will attempt to automatically execute an action when the PDF is opened.</li>
+<li><code>/EmbeddedFile</code> indicates that the PDF includes an embedded file, which <em>could</em> be a technique for delivering a malicious payload.</li>
+</ul>
+<p>Because we&#39;ve identified some suspicious indicators in this file, let&#39;s return to <code>pdf-parser.py</code> to analyze these objects.</p>
+<h2 id="embedded-javascript">Embedded JavaScript</h2>
+<p>To extract any embedded JavaScript objects, we can call <code>pdf-parser.py</code>, provide the <code>-s</code> argument, and search for the <code>/JavaScript</code> string:</p>
+<pre><code>python3 Tools/pdf-parser<span class="hljs-selector-class">.py</span> Dropper<span class="hljs-selector-class">.pdf</span> -s <span class="hljs-string">"/JavaScript"</span>
+</code></pre><p><img src="https://github.com/user-attachments/assets/efdd9131-af6b-4fbd-9198-a5646e3c67a6" alt="pdf-parser.py output"></p>
+<p>By extracting any <code>/JavaScript</code> objects, we can identify that the PDF contains JavaScript embedded within an <code>/Action</code> object (<code>object 9</code>). Specifically, the JavaScript code is calling the <code>this.exportDataObject</code> method to extract or export an embedded file (<code>eicar-dropper.doc</code>) from the PDF. </p>
+<p>After doing so, it calls <code>nLaunch: 2</code> to direct Acrobat to save the file attachment to a temporary file and then ask the operating system to open it. More information on understanding these methods can be found <a href="https://acrobatusers.com/tutorials/print/importing-and-exporting-pdf-file-attachments-acrobat-javascript/">here</a>.</p>
+<p>To conclude, it seems likely that this PDF is weaponized to deliver a file via JavaScript. Although its behavior and success depends on user interaction and the PDF reader&#39;s configuration, it&#39;s a clear indicator of something suspicious going on.</p>
+<h2 id="open-actions">Open Actions</h2>
+<p>Next, let&#39;s correlate our findings with any embedded open actions. To do so, we can run the same command as we did previously, but search for any <code>/OpenAction</code> objects:</p>
+<pre><code>python3 Tools/pdf-parser<span class="hljs-selector-class">.py</span> Dropper<span class="hljs-selector-class">.pdf</span> -s <span class="hljs-string">"/OpenAction"</span>
+</code></pre><p><img src="https://github.com/user-attachments/assets/364a5af1-53e3-4dc8-a003-54bc446473ae" alt="pdf-parser.py output"></p>
+<p>This appears to correlate with what we identified in the embedded JavaScript. When the PDF is opened, the <code>/OpenAction</code> triggers <code>object 9 0</code>, which we know from the earlier output contains JavaScript to extract and possibly execute the embedded file <code>eicar-dropper.doc</code>.</p>
+<h2 id="embedded-files">Embedded Files</h2>
+<p>Lastly, let&#39;s attempt to extract the embedded <code>eicar-dropper.doc</code> file that we have seen referenced throughout the structure of this PDF. First, we can search for the <code>/EmbeddedFile</code> object to identify what object index it relates to:</p>
+<pre><code>python3 Tools/pdf-parser<span class="hljs-selector-class">.py</span> Dropper<span class="hljs-selector-class">.pdf</span> -s <span class="hljs-string">"/EmbeddedFile"</span>
+</code></pre><p><img src="https://github.com/user-attachments/assets/4dd150e0-ea02-4c64-ac53-d3fa7890c397" alt="pdf-parser.py output"></p>
+<p>From this output, we can see that the <code>eicar-dropper.doc</code> file is directly stored as an <code>/EmbeddedFile</code> (<code>obj 8 0</code>).</p>
+<p>Now that we know the object index number (<code>8</code>), we can use the <code>--object</code> argument to select it, the <code>--filter</code> argument to decode the file, the <code>--raw</code> argument to write the output, and <code>--dump</code> to specify the filename to dump the file contents to: </p>
+<pre><code><span class="hljs-comment">python3</span> <span class="hljs-comment">Tools/pdf</span><span class="hljs-literal">-</span><span class="hljs-comment">parser</span><span class="hljs-string">.</span><span class="hljs-comment">py</span> <span class="hljs-comment">Dropper</span><span class="hljs-string">.</span><span class="hljs-comment">pdf</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">object</span> <span class="hljs-comment">8</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">filter</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">raw</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">dump</span> <span class="hljs-comment">eicar</span><span class="hljs-literal">-</span><span class="hljs-comment">dropper</span><span class="hljs-string">.</span><span class="hljs-comment">doc</span>
+</code></pre><p><img src="https://github.com/user-attachments/assets/31f98669-8d39-40b9-ae1f-99bcc9f54201" alt="pdf-parser.py output"></p>
+<p>Excellent! We now have our hands on the embedded file and can begin to perform all sorts of additional static and dynamic analysis on it (such as looking up its hash and comparing it to threat intelligence databases, using tools like <code>oledump</code> to parse through any additional macros or scripts, or submit the file to a dynamic malware analysis solution like <em>Any.run</em> or <em>JoeSandbox</em>).</p>
+<p>For example, by running the <code>md5sum</code> command, we can extract the file&#39;s MD5 hash value:</p>
+<pre><code>md<span class="hljs-number">5</span>sum eicar-dropper.<span class="hljs-meta">doc</span>
+</code></pre><p><img src="https://github.com/user-attachments/assets/79df3825-d96e-4fdb-aeb5-742e1b91c208" alt="md5sum output"></p>
+<p>By submitting this hash to <a href="https://virustotal.com">VirusTotal</a> (<code>9b74140a678d813d6dd6de3708398194</code>), we&#39;ll find that several vendors have flagged this file as malicious (although, don&#39;t worry - it&#39;s just a test file).</p>
+<p><img src="https://github.com/user-attachments/assets/37723c67-f616-4e31-bca4-2c32e3b109bf" alt="VirusTotal output"></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Great work! We were able to securely extract the attachment from the email and use basic static analysis techniques to parse through multiple PDF files. By doing so, we were able to understand how to quickly extract URLs, search for risky objects, and document a number of malicious indicators.</p>
+<h2 id="indicators-of-compromise">Indicators of Compromise</h2>
+<p>It&#39;s always a good idea to document the malicious artifacts we gathered during our investigation. Below, I have done so in <em>defanged</em> format. Defanging is a way to alter potentially dangerous URLs, IP addresses, and file paths to prevent them from being clickable or accidentally executed.</p>
+<h3 id="email-address">Email Address</h3>
+<ul>
+<li><code>report-ppvguaohyzdqqtvec@wirangjos[.]clicklifestyles[.]com</code></li>
+</ul>
+<h3 id="files">Files</h3>
+<ul>
+<li><code>Tax_Report[.]pdf</code><ul>
+<li>MD5: <code>9080bf37c122cdd9d4eb9e87e95ba614</code></li>
+<li>SHA1: <code>fe65064ac58658c1941cc12c43ccc7c8beff8afb</code></li>
+<li>SHA256: <code>c33f67a18ad931a7ae9957fc79e304178c7fa450aa471c544139018c45aad083</code></li>
+</ul>
+</li>
+<li><code>Statement[.]pdf</code><ul>
+<li>MD5: <code>14a3bf6d25308c6c320bcb328e71f189</code></li>
+<li>SHA1: <code>8e48b75a302674c28650ce63a4a669ae9525e235</code></li>
+<li>SHA256: <code>e90e263bce015c0ad6640d2581582aee4f940accc18d688a25d9a319e39c4110</code></li>
+</ul>
+</li>
+<li><code>Dropper[.]pdf</code><ul>
+<li>MD5: <code>a1ddc9ebe19a3d43ec25889085ad3ed8</code></li>
+<li>SHA1: <code>0fa681a24df1b6ee6960bf1098af9689cfb8a576</code></li>
+<li>SHA256: <code>86a96ec03ba8242c1486456d67ee17f919128754846dbb3bdf5e836059091dba</code></li>
+</ul>
+</li>
+<li><code>eicar-dropper[.]doc</code><ul>
+<li>MD5: <code>9b74140a678d813d6dd6de3708398194</code></li>
+<li>SHA1: <code>1a78759f1370cbe5efa82c2f03e523aa9bee299c</code></li>
+<li>SHA256: <code>eb0ae2d1cd318dc1adb970352e84361f9b194ff14f45b0186e4ed6696900394a</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="urls">URLs</h3>
+<ul>
+<li><code>hxxps[://]monitor[.]clickcease[.]com</code></li>
+<li><code>hxxps[://]ecy[.]wcs520[.]com/wp-content/themes/evita/red[.]php</code></li>
+<li><code>hxxps[://]script[.]google[.]com/macros/s/AKfycbwABk1V3TSZ7dwG4lOsmbewJuEt2TExXS8cSaYuhcQwcxoffsDSJS8VLFR4h0pkJFwkUQ/exec</code></li>
+</ul>
+<h2 id="tcm-security-promo-code">TCM Security - Promo Code</h2>
+<p><img src="https://github.com/user-attachments/assets/90283a54-d164-4990-a09b-4edb84ac661e" alt="TCM Security logo"></p>
+<p>If you enjoyed this scenario and lesson, be sure to check out TCM Security&#39;s <a href="https://academy.tcm-sec.com/p/security-operations-soc-101">Security Operations (SOC) 101</a>, a 30+ hour training course that dives deep into Phishing Analysis, Network Traffic Analysis, Endpoint Detection and Response, Log Analysis and Management, Security Information and Event Management (SIEM), Threat Intelligence, and DFIR operations. 😎🛡️</p>
+<p>🚨 Use the limited time promo code <code>BSIDESOTTAWA</code> to save 50% off the TCM Academy! :)</p>
+</body></html>
