@@ -2,8 +2,8 @@ MalDoc Attachment Analysis Lab Scenarios
 
 Welcome to the email attachment analysis lab! In this repository you will find the instructions and lab files for the following simulations:
 
-- [Lab 1: MalDoc_Analysis](https://github.com/MalwareCube/BSides_Ottawa_2024/tree/main/MalDoc_Analysis)
-- [Lab 2: PDF_Analysis](https://github.com/MalwareCube/BSides_Ottawa_2024/tree/main/PDF_Analysis)
+- [Lab 1: MalDoc_Analysis](https://github.com/MalwareCube/MalDoc_Analysis/tree/main/MalDoc_Analysis)
+- [Lab 2: PDF_Analysis](https://github.com/MalwareCube/MalDoc_Analysis/tree/main/PDF_Analysis)
 
 You can find all of the lab files in the `04_Maldoc_Analysis` directory on the provided system.
 
