@@ -12,6 +12,8 @@ If you are following along on your *own* VM, you can clone this repository, incl
 
 ```
 git clone https://github.com/MalwareCube/MalDoc_Analysis.git
+```
+```
 cd MalDoc_Analysis
 ```
 
