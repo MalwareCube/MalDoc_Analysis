@@ -1,4 +1,4 @@
-# BSides Ottawa 2024 - Email Attachment Analysis Lab Scenarios
+MalDoc Attachment Analysis Lab Scenarios
 
 Welcome to the email attachment analysis lab! In this repository you will find the instructions and lab files for the following simulations:
 
